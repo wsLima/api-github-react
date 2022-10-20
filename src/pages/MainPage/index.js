@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Logo, Title } from './styles';
 
 import githubLogo from '../../assets/images/github-logo.svg';
 
 const MainPage = () => (
-    <Container>
-      <img src={githubLogo} alt="API Github" />
-    </Container>
+  <Container>
+    <Logo src={githubLogo} alt="API Github" />
+    <Title>API Github</Title>
+  </Container>
 );
 
 export default MainPage;
