@@ -33,13 +33,13 @@ export const Login = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.title};
 `;
 
-export const Name = styled.h1`
-    font-size: ${(props) => props.theme.fontSizes.subtitle}
-    font-weight: normal;
+export const Name = styled.h3`
+  font-size: ${(props) => props.theme.fontSizes.subtitle};
+  font-weight: normal;
 
-    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-        display: none;
-    }
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    display: none;
+  }
 `;
 
 export const Inner = styled.div`
