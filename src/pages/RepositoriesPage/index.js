@@ -6,6 +6,8 @@ import Repositories from './Repositories';
 
 import { Container, Sidebar, Main } from './styles';
 
+import { getLangsFrom } from '../../services/api';
+
 const RepositoriesPage = () => {
   const user = {
     login: 'wsLima',
@@ -18,14 +20,61 @@ const RepositoriesPage = () => {
     location: 'Manaus - AM',
   };
 
+  const repositories = [
+    {
+      id: '1',
+      name: 'Repo 1',
+      description: 'Descrição',
+      html_url: 'wsLima.github.io',
+      language: 'NodeJS',
+    },
+    {
+      id: '2',
+      name: 'Repo 2',
+      description: 'Descrição',
+      html_url: 'wsLima.github.io',
+      language: 'Javascript',
+    },
+    {
+      id: '3',
+      name: 'Repo 3',
+      description: 'Descrição',
+      html_url: 'wsLima.github.io',
+      language: 'Typescript',
+    },
+    {
+      id: '4',
+      name: 'Repo 4',
+      description: 'Descrição',
+      html_url: 'wsLima.github.io',
+      language: 'Java',
+    },
+    {
+      id: '5',
+      name: 'Repo 5',
+      description: 'Descrição',
+      html_url: 'wsLima.github.io',
+      language: 'NodeJS',
+    },
+    {
+      id: '6',
+      name: 'Repo 6',
+      description: 'Descrição',
+      html_url: 'wsLima.github.io',
+      language: 'Java',
+    },
+  ];
+
+  const languages = getLangsFrom(repositories);
+
   return (
     <Container>
       <Sidebar>
         <Profile user={user} />
-        <Filter />
+        <Filter languages={languages} />
       </Sidebar>
       <Main>
-        <Repositories />
+        <Repositories repositories={repositories} />
       </Main>
     </Container>
   );
